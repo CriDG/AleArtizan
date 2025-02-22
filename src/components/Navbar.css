@@ -1,0 +1,50 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto; /* 🔥 Permette alla navbar di espandersi se serve più spazio */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    z-index: 1000;
+    background: transparent;
+  }
+  
+  
+  
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo img {
+    height: 100px;
+    width: auto;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 5px; /* 🔥 Spazio tra i link */
+    flex-wrap: wrap; /* 🔥 Se non c'è spazio, i link andranno a capo */
+    max-width: 100vw; /* 🔥 Aumentiamo lo spazio per i link */
+    justify-content: flex-end; /* 🔥 Centriamo i link */
+    overflow: hidden; /* 🔥 Evita il taglio dei link */
+  }
+  
+  
+.navbar-links a {
+    text-decoration: none;
+    color: pink;
+    font-size: 16px; /* 🔥 Riduce leggermente la dimensione del testo */
+    transition: 0.3s;
+    white-space: nowrap; /* 🔥 Evita che le parole vengano spezzate */
+    padding: 5px 3px;
+  }
+  
+  .navbar-links a:hover {
+    color: gray; /* Effetto hover */
+    
+  }
+  
