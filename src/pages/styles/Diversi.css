@@ -1,0 +1,65 @@
+.products-wrapper {
+    display: flex;
+    overflow-x: auto;  /* Abilita lo scroll orizzontale */
+    gap: 15px;  /* Aumenta la distanza tra le card per un aspetto più leggibile */
+    padding: 5px;
+  }
+  
+  .product-card {
+    width: 200px;  /* Aumenta la larghezza della card da 100px a 160px */
+    padding: 5px;  /* Più spazio interno per migliorare la leggibilità */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+    flex-shrink: 0; /* Evita che le card si comprimano troppo */
+  }
+  
+  .product-image {
+    width: 140px;  /* Aumenta la dimensione dell'immagine da 50px a 80px */
+    height: 200px;
+    object-fit: cover; /* Mantiene la proporzione dell'immagine senza distorsioni */
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  
+  .product-title {
+    font-size: 14px; /* Aumenta la grandezza del titolo */
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  
+  .product-description {
+    font-size: 12px; /* Testo leggermente più grande per migliorare la leggibilità */
+    color: #555;
+    margin-top: -15px; /* Tolto lo spazio sopra la descrizione */
+    margin-bottom: 5px;  /* Ridotto lo spazio sotto la descrizione */
+  }
+  
+  .product-footer {
+    display: flex;
+    justify-content: space-between; /* Allinea prezzo e bottone sui lati opposti */
+    align-items: center;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .product-price {
+    font-weight: bold;
+    color: pink; /* Colore blu per evidenziare il prezzo */
+  }
+  
+  .add-fav-btn {
+    background-color: yellow;
+    color: white;
+    font-size: 12px;  /* Aumenta il font del bottone */
+    padding: 5px 8px;  /* Aumenta leggermente il padding per un bottone più grande */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-fav-btn:hover {
+    background-color: yellow;
+  }
+  
