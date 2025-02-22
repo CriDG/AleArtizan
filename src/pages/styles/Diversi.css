@@ -16,8 +16,8 @@
   }
   
   .product-image {
-    width: 140px;  /* Aumenta la dimensione dell'immagine da 50px a 80px */
-    height: 200px;
+    width: 180px;  /* Aumenta la dimensione dell'immagine da 50px a 80px */
+    height: 220px;
     object-fit: cover; /* Mantiene la proporzione dell'immagine senza distorsioni */
     border-radius: 4px;
     margin-top: 5px;
@@ -32,7 +32,7 @@
   .product-description {
     font-size: 12px; /* Testo leggermente più grande per migliorare la leggibilità */
     color: #555;
-    margin-top: -15px; /* Tolto lo spazio sopra la descrizione */
+    margin-top: -25px; /* Tolto lo spazio sopra la descrizione */
     margin-bottom: 5px;  /* Ridotto lo spazio sotto la descrizione */
   }
   

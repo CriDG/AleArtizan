@@ -49,6 +49,7 @@ const ProductCard = ({ product }) => {
     );
   };
   
+  
   export default function Diversi() {
     return (
       <>
