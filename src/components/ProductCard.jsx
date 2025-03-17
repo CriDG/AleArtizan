@@ -1,0 +1,27 @@
+import './ProductCard.css';
+  import LikeButton from './LikeButton';
+  import CartButton from './CartButton';
+export default function ProductCard({children, id, description,price, name, imageUrl}) {
+  return (
+<>
+<div className="product-card" data-id={id}>
+          {/* Nome del prodotto con font più grande */}
+          <img src={imageUrl} alt={name} className="product-image" />
+
+            <div className="product-info">
+          {/* <h2 className="product-title">{name}</h2>  */}
+          {/* <p className="product-description">{description}</p> */}
+  
+          {/* Prezzo e bottone per aggiungere ai preferiti */}
+          <div className="product-footer">
+            <span className="product-price">{price}</span> {/* Prezzo visibile e più grande */}
+          <LikeButton/>
+          <CartButton/>
+
+          </div>
+          </div>
+    </div>
+        {children}
+</>
+  )
+}

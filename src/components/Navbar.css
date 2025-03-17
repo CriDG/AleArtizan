@@ -1,82 +1,125 @@
-/* Stile generale della navbar */
+/* 📌 Navbar sempre visibile */
 .navbar {
-  position: fixed; /* Mantiene la navbar fissa in alto */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 80px; /* Altezza fissa per evitare il taglio del logo */
+  width: 100%;
   display: flex;
-  justify-content: space-between; /* Distribuisce logo e menu */
+  justify-content: space-between;
   align-items: center;
-  padding: 5px 0;  //Spazio ai lati corretto, ---->>> lo 0 era 1
+  background: rgba(255, 255, 255, 0.9);
   z-index: 1000;
-  background: transparent;
+  padding: 1px 5px;
+  height: 80px;
 }
 
-/* Stile per il logo */
+/* 📌 Logo al centro */
 .navbar-logo {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .navbar-logo img {
-  height: 100px; /* Logo più piccolo per evitare il taglio */
+  height: 80px;
   width: auto;
 }
 
-/* Stile per il contenitore del menu */
-.menu-container {
-  position: relative;
-  order: -1; /* Mantiene il menu a sinistra */
+/* 📌 Link sinistra (Chi siamo, Cosa facciamo) */
+.navbar-links.left {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  left: 20px;
 }
 
-/* Stile per il pulsante del menu */
-.menu-button {
-  background: #e6007e; /* Fuxia */
-  color: white;
-  padding: 10px 20px;
+.navbar-links.left button {
+  background: none;
   border: none;
   cursor: pointer;
   font-size: 18px;
-  font-family: 'Dancing Script', cursive; /* Font elegante */
-  border-radius: 5px;
-  transition: 0.3s;
+  color: #e6007e;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-.menu-button:hover {
-  background: #cc0070; /* Fuxia più scuro */
+.navbar-links.left button:hover {
+  color: #cc0070;
 }
 
-/* Stile per il menu a tendina */
-.dropdown {
+/* 📌 Link destra (Menu Categorie) */
+.navbar-links.right {
   position: absolute;
-  top: 50px; /* Sposta il menu più vicino al pulsante */
-  left: 0; /* Assicura che il menu si apra sotto il pulsante */
+  right: 20px;
+  color: #cc0070;
+}
+
+/* 📌 Stile del menu Burger */
+.bm-burger-button {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 36px;
+  height: 30px;
+}
+
+.bm-menu {
   background: #e6007e;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  min-width: 180px;
-  overflow: hidden;
-  display: none;
-  flex-direction: column;
+  padding: 2em;
+  font-size: 1.5em;
 }
 
-/* Quando il menu è aperto */
-.dropdown.open {
-  display: flex;
-}
-
-/* Stile per i link del menu */
-.dropdown a {
+.bm-item {
   display: block;
   padding: 10px;
   color: white;
   text-decoration: none;
-  font-family: 'Dancing Script', cursive;
+  transition: color 0.3s;
   font-size: 18px;
-  transition: 0.3s;
 }
 
-.dropdown a:hover {
-  background: #cc0070; /* Sfondo più scuro quando si passa sopra */
+.bm-item:hover {
+  color: #ffccff;
+}
+
+/* 📌 Stile personalizzato per il pulsante Burger ☰ */
+.custom-burger-icon {
+  font-size: 30px; /* Grandezza del simbolo ☰ */
+  color: #e6007e; /* 🔥 Ora il menu burger è fuxia */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 📌 Forziamo il colore del pulsante */
+.bm-burger-button {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 36px;
+  height: 30px;
+}
+
+.bm-burger-bars {
+  background-color: #e6007e !important; /* 🔥 Ora il bottone burger è fuxia */
+}
+
+/* 📌 Stile del menu burger aperto */
+.bm-menu {
+  background: #e6007e; /* 🔥 Sfondo del menu */
+  padding: 2em;
+  font-size: 1.5em;
+}
+
+/* 📌 Stile dei link nel menu */
+.bm-item {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.bm-item:hover {
+  color: #ffccff;
 }

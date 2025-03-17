@@ -1,67 +1,53 @@
 import React from 'react';
 import './styles/Diversi.css';  // Importa il file CSS
-
+import ProductCard from '../components/ProductCard';
 const products = [
-    {
-      id: 1,
-      name: "Prodotto 1",
-      description: "Descrizione breve 1",
-      price: "€ 19.99",
-      imageUrl: "https://i.postimg.cc/HLmCfkPb/diverse1.jpg",
-    },
-    {
-      id: 2,
-      name: "Prodotto 2",
-      description: "Descrizione breve 2",
-      price: "€ 29.99",
-      imageUrl: "https://i.postimg.cc/pdBtxMg4/diverse2.jpg",
-    },
-    {
-      id: 3,
-      name: "Prodotto 3",
-      description: "Descrizione breve 3",
-      price: "€ 39.99",
-      imageUrl: "https://i.postimg.cc/XJ76YDWJ/diverse3.jpg",
-    },
+    { id: 1, name: "Prodotto 1", description: "Descrizione breve 1", price: "€ 19.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033505/diverse1_afjxlt.jpg" },
+    { id: 2, name: "Prodotto 2", description: "Descrizione breve 2", price: "€ 29.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse2_yopmbx.jpg" },
+    { id: 3, name: "Prodotto 3", description: "Descrizione breve 3", price: "€ 39.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse3_q7wdgl.jpg" },
+    { id: 4, name: "Prodotto 4", description: "Descrizione breve 4", price: "€ 24.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033505/diverse1_afjxlt.jpg" },
+    { id: 5, name: "Prodotto 5", description: "Descrizione breve 5", price: "€ 34.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse2_yopmbx.jpg" },
+    { id: 6, name: "Prodotto 6", description: "Descrizione breve 6", price: "€ 44.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse3_q7wdgl.jpg" },
+    { id: 7, name: "Prodotto 7", description: "Descrizione breve 7", price: "€ 19.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033505/diverse1_afjxlt.jpg" },
+    { id: 8, name: "Prodotto 8", description: "Descrizione breve 8", price: "€ 29.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse2_yopmbx.jpg" },
+    { id: 9, name: "Prodotto 9", description: "Descrizione breve 9", price: "€ 39.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse3_q7wdgl.jpg" },
+  { id: 10, name: "Prodotto 10", description: "Descrizione breve 10", price: "€ 24.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033505/diverse1_afjxlt.jpg" },
+  { id: 11, name: "Prodotto 11", description: "Descrizione breve 11", price: "€ 34.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse2_yopmbx.jpg" },
+  { id: 12, name: "Prodotto 12", description: "Descrizione breve 12", price: "€ 44.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse3_q7wdgl.jpg" },
+  { id: 13, name: "Prodotto 13", description: "Descrizione breve 13", price: "€ 19.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033505/diverse1_afjxlt.jpg" },
+  { id: 14, name: "Prodotto 14", description: "Descrizione breve 14", price: "€ 29.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse2_yopmbx.jpg" },
+  { id: 15, name: "Prodotto 15", description: "Descrizione breve 15", price: "€ 39.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse3_q7wdgl.jpg" },
+  { id: 16, name: "Prodotto 16", description: "Descrizione breve 16", price: "€ 24.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033505/diverse1_afjxlt.jpg" },
+  { id: 17, name: "Prodotto 17", description: "Descrizione breve 17", price: "€ 34.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse2_yopmbx.jpg" },
+  { id: 18, name: "Prodotto 18", description: "Descrizione breve 18", price: "€ 44.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse3_q7wdgl.jpg" },
+  { id: 19, name: "Prodotto 19", description: "Descrizione breve 19", price: "€ 19.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033505/diverse1_afjxlt.jpg" },
+  { id: 20, name: "Prodotto 20", description: "Descrizione breve 20", price: "€ 29.99", imageUrl: "https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse2_yopmbx.jpg" }
 ];
 
-// Componente per la card prodotto
-const ProductCard = ({ product }) => {
-    return (
-      <>
-        <div className="product-card">
-          {/* Nome del prodotto con font più grande */}
-          <h2 className="product-title">{product.name}</h2>
-          
-          {/* Descrizione del prodotto */}
-          <p className="product-description">{product.description}</p>
-  
-          {/* Immagine del prodotto con dimensioni aumentate */}
-          <img src={product.imageUrl} alt={product.name} className="product-image" />
-  
-          {/* Prezzo e bottone per aggiungere ai preferiti */}
-          <div className="product-footer">
-            <span className="product-price">{product.price}</span> {/* Prezzo visibile e più grande */}
-            <button className="add-fav-btn">❤️</button>
-          </div>
-        </div>
-      </>
-    );
-  };
-  
-  
   export default function Diversi() {
     return (
       <>
-        <h1>Diversi</h1>
+        <h2 style={{color : 'red', marginTop: "80px" }}>Diversi</h2>
         <p>Qui trovi una selezione di prodotti vari.</p>
   
         {/* Contenitore orizzontale per lo scroll dei prodotti */}
-        <div className="products-wrapper">
+        <div style={{
+             display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", // Colonne più grandi "repeat(auto-fit, minmax(350px, 1fr))"
+             gap: "20px", // Spazio maggiore tra le card
+             justifyContent: "center",
+             alignItems: "start",
+             padding: "40px",
+             width: "100%",
+             maxWidth: "1600px", // Adattato per schermi larghi
+             margin: "auto",
+        }} >
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} {...product} />
           ))}
         </div>
       </>
     );
   }
+
+  // className="products-wrapper"

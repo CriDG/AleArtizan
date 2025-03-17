@@ -1,0 +1,201 @@
+/* 📌 Sezione Chi siamo */
+.about-us {
+  width: 100%;
+  padding: 50px 5%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  margin-top: 115px;
+}
+
+.about-us.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  gap: 40px;
+  flex-direction: row-reverse;
+}
+
+.about-image {
+  width: 45%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+  width: 50%;
+}
+
+.about-text h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column-reverse; /* 🔥 Imposta immagine sopra, testo sotto */
+    text-align: center;
+  }
+
+  .about-image {
+    width: 80%; /* 🔥 Mantiene l'immagine proporzionata su mobile */
+  }
+
+  .about-text {
+    width: 100%;
+    font-size: 1rem; /* 🔥 Rende il testo più leggibile su mobile */
+  }
+}
+
+/* 📌 NUOVA SEZIONE CON LO SLIDER */
+.gallery-section {
+  width: 100%;
+  padding: 80px 5%;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  margin-top: 50px;
+}
+
+.gallery-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gallery-text {
+  margin-bottom: 20px;
+}
+
+.gallery-text h2 {
+  font-size: 1.5 rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.gallery-text p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* 📌 Slider */
+.gallery-carousel {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 1rem;
+  height: 400px;
+}
+
+.gallery-slide {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 📌 Slick Carousel Customization */
+.slick-dots {
+  bottom: 10px;
+}
+
+.slick-dots li button:before {
+  color: white;
+  font-size: 16px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ff69b4;
+}
+
+/* 📌 Stile delle frecce */
+.slick-prev,
+.slick-next {
+  z-index: 9999 !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.slick-prev {
+  left: 100px !important;
+}
+
+.slick-next {
+  right: 100px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: fuchsia !important;
+  font-size: 24px;
+  opacity: 1 !important;
+}
+
+/* 📌 Responsività */
+@media screen and (max-width: 768px) {
+  .gallery-section {
+    padding: 50px 5%;
+  }
+
+  .gallery-carousel {
+    height: 250px;
+    width: 90%; /* 🔥 Evita che lo slider sia troppo largo su mobile */
+    margin: auto;
+  }
+
+  .gallery-slide {
+    height: 250px;
+  }
+
+  .gallery-container {
+    flex-direction: column-reverse; /* 🔥 Sposta lo slider sotto il testo */
+    text-align: center;
+  }
+
+  .gallery-text {
+    width: 100%;
+  }
+}

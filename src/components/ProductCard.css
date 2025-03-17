@@ -1,0 +1,97 @@
+/* 🟢 STILE BASE DELLA CARD */
+.product-card {
+  width: 300px; /* Larghezza della card */
+  max-width: 450px; /* Larghezza massima */
+  padding: 10px; Spazio interno
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Angoli arrotondati */
+  text-align: center;
+  /* background-color: #fff; Sfondo bianco */
+  flex-shrink: 0; /* Evita che la card si riduca troppo */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombra leggera */
+  transition: transform 0.3s ease-in-out; /* Transizione fluida */
+  position: relative; /* Necessario per gli elementi assoluti interni */
+  overflow: hidden; /* Evita che elementi interni escano fuori */
+}
+
+/* 🟢 EFFETTO HOVER SULLA CARD */
+.product-card:hover {
+  transform: scale(1.05); /* Ingrandisce leggermente la card */
+}
+
+/* 🟢 IMMAGINE DEL PRODOTTO */
+.product-image {
+  width: 100%; /* L'immagine occupa tutta la card */
+  height: 350px;
+  object-fit: cover; /* Mantiene proporzioni corrette */
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: opacity 0.3s ease-in-out; /* Transizione fluida */
+}
+
+/* 🟢 CONTENUTO NASCOSTO CHE APPARE CON HOVER */
+.product-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(248, 225, 225, 0.99); /*Sfondo semi-trasparente dove compaie il button etc */
+  padding: 5px;
+  transform: translateY(100%); /* Parte nascosta inizialmente */
+  transition: transform 0.3s ease-in-out; /* Effetto slide-up */
+}
+
+/* 🟢 MOSTRA LE INFO QUANDO L'UTENTE PASSA SOPRA */
+.product-card:hover .product-info {
+  transform: translateY(0);
+}
+
+/* 🟢 NASCONDE TESTO E FOOTER INIZIALMENTE */
+.product-title,
+.product-description,
+.product-footer {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* 🟢 FA COMPARIRE TESTO E FOOTER AL PASSAGGIO DEL MOUSE */
+.product-card:hover .product-title,
+.product-card:hover .product-description,
+.product-card:hover .product-footer {
+  opacity: 1;
+}
+
+/* 🟢 STILE DEL TITOLO */
+/* .product-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+} */
+
+/* 🟢 STILE DELLA DESCRIZIONE nn la tolgo xke forse la usero! */
+/* .product-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+} */
+
+/* 🟢 FOOTER (PREZZO E PULSANTE) */
+.product-footer {
+  display: flex;
+  justify-content: left;  /* Allinea prezzo e bottone */
+  align-items: center;
+  font-size: 16px;
+  margin-top: 15px;
+  gap: 10px;
+
+}
+
+/* 🟢 STILE DEL PREZZO */
+.product-price {
+  font-weight: bold;
+  font-size: 18px;
+  color: fuchsia; /* Colore del prezzo */
+  
+}
+
+
