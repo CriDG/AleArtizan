@@ -43,7 +43,10 @@ export default function Navbar() {
     <>
       <AppBar
         position="fixed"
-        sx={{ background: 'rgba(255, 255, 255, 0.5)', padding: '5px 10px' }}
+        sx={{ 
+          
+          background: 'rgba(255, 255, 255, 0.5)', 
+          padding: '5px 10px' }}
       >
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           {/* 🔹 Link a sinistra (Solo su Desktop) */}
@@ -58,6 +61,7 @@ export default function Navbar() {
                   fontWeight: 'bold',
                   cursor: 'pointer',
                   color: '#e6007e',
+                  fontFamily: 'cursive', 
                 }}
               >
                 Chi siamo
@@ -71,6 +75,7 @@ export default function Navbar() {
                   fontWeight: 'bold',
                   cursor: 'pointer',
                   color: '#e6007e',
+                  fontFamily: 'cursive', 
                 }}
               >
                 Cosa facciamo
@@ -83,14 +88,14 @@ export default function Navbar() {
             variant="h6"
             component={Link}
             to="/home"
-            sx={{
+            sx={{          
               textDecoration: 'none',
               color: '#e6007e',
               fontWeight: 'bold',
             }}
           >
             <img
-              src="https://res.cloudinary.com/dsatempym/image/upload/v1742030377/logo2_rzqwft.png"
+              src="https://i.postimg.cc/jj14DD07/logo2.png"
               alt="Logo"
               style={{ height: '110px' }}
             />
@@ -114,6 +119,7 @@ export default function Navbar() {
             width: 250,
             background: 'rgba(230, 0, 126, 0.4)',
             height: '100%',
+        
           }}
         >
           {/* 🔥 Su mobile, spostiamo "Chi siamo" e "Cosa facciamo" nel menu */}
@@ -131,6 +137,7 @@ export default function Navbar() {
                         'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
                       transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
                       borderRadius: '5px' /* 🔥 Angoli arrotondati */,
+                      fontFamily: 'cursive', 
                     },
                   }}
                 />
@@ -147,6 +154,7 @@ export default function Navbar() {
                         'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
                       transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
                       borderRadius: '5px' /* 🔥 Angoli arrotondati */,
+                      fontFamily: 'cursive', 
                     },
                   }}
                 />
@@ -171,7 +179,9 @@ export default function Navbar() {
                     'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
                   transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
                   borderRadius: '5px' /* 🔥 Angoli arrotondati */,
+                  
                 },
+                
               }}
             />
           </ListItem>
@@ -192,6 +202,7 @@ export default function Navbar() {
                     'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
                   transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
                   borderRadius: '5px' /* 🔥 Angoli arrotondati */,
+                  fontFamily: 'cursive', 
                 },
               }}
             />
@@ -213,6 +224,7 @@ export default function Navbar() {
                     'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
                   transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
                   borderRadius: '5px' /* 🔥 Angoli arrotondati */,
+                  fontFamily: 'cursive', 
                 },
               }}
             />
