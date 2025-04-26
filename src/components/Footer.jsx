@@ -1,8 +1,21 @@
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
 import './Footer.css';
 
+
+
 const Footer = () => {
+ const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setIsVisible(true), 500);
+  }, []);
+
   return (
+    <section
+    id='contatti'
+    className={`about-us ${isVisible ? 'show' : ''}`}
+    >
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
@@ -53,6 +66,7 @@ const Footer = () => {
         </p>
       </div>
     </footer>
+    </section>
   );
 };
 

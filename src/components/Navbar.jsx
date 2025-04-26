@@ -80,6 +80,21 @@ export default function Navbar() {
               >
                 Cosa facciamo
               </button>
+
+              <button
+                onClick={() => scrollToSection('contatti')}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  color: '#e6007e',
+                  fontFamily: 'cursive', 
+                }}
+              >
+                Contatti
+              </button>
             </div>
           )}
 
@@ -142,6 +157,7 @@ export default function Navbar() {
                   }}
                 />
               </ListItem>
+
               <ListItem button onClick={() => scrollToSection('cosa-facciamo')}>
                 <ListItemText
                   primary="Cosa facciamo"
@@ -159,6 +175,25 @@ export default function Navbar() {
                   }}
                 />
               </ListItem>
+
+              <ListItem button onClick={() => scrollToSection('contatti')}>
+                <ListItemText
+                  primary="Contatti"
+                  sx={{
+                    color: 'white',
+                    fontSize: '20px',
+                    transition: 'all 0.3s ease-in-out',
+                    '&:hover': {
+                      background:
+                        'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
+                      transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
+                      borderRadius: '5px' /* 🔥 Angoli arrotondati */,
+                      fontFamily: 'cursive', 
+                    },
+                  }}
+                />
+              </ListItem>
+
             </>
           )}
 

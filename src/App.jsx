@@ -19,8 +19,9 @@ function App() {
           <Route path="/famiglia" element={<Famiglia />} />
           <Route path="/feste" element={<Feste />} />
         </Routes>
+        <Footer />
       </div>
-      <Footer />
+     
     </>
   );
 }
