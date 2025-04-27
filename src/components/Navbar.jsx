@@ -50,8 +50,9 @@ export default function Navbar() {
           <div className="navbar-logo">
             <Link to="/home">
               <img
-                src="https://i.postimg.cc/jj14DD07/logo2.png"
+                src="https://res.cloudinary.com/dsatempym/image/upload/v1742030377/logo2_rzqwft.png"
                 alt="Logo"
+                crossOrigin="anonymous"
               />
             </Link>
           </div>

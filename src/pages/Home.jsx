@@ -6,9 +6,9 @@ import './styles/Home.css';
 
 const Home = () => {
   const carouselImages = [
-    'https://i.postimg.cc/HLmCfkPb/diverse1.jpg',
-    'https://i.postimg.cc/pdBtxMg4/diverse2.jpg',
-    'https://i.postimg.cc/XJ76YDWJ/diverse3.jpg',
+    'https://res.cloudinary.com/dsatempym/image/upload/v1742033505/diverse1_afjxlt.jpg',
+    'https://res.cloudinary.com/dsatempym/image/upload/v1742033506/diverse2_yopmbx.jpg',
+    'https://res.cloudinary.com/dsatempym/image/upload/v1742031391/diverse3_qpazry.jpg',
   ];
 
   const sliderSettings = {
@@ -35,8 +35,9 @@ const Home = () => {
       <section id="chi-siamo" className={`about-us ${isVisible ? 'show' : ''}`}>
         <div className="about-container">
           <img
-            src="https://i.postimg.cc/28zfh5Pc/482221446-612030938482941-3553248523246822369-n.jpg"
+            src="https://res.cloudinary.com/dsatempym/image/upload/v1742033733/482221446_612030938482941_3553248523246822369_n_ouqoin.jpg"
             alt="Chi siamo"
+            crossOrigin="anonymous"
             className="about-image"
           />
 
@@ -102,7 +103,7 @@ const Home = () => {
             <Slider {...sliderSettings}>
               {carouselImages.map((image, index) => (
                 <div key={index} className="gallery-slide">
-                  <img src={image} alt={`Slide ${index + 1}`} />
+                  <img src={image} alt={`Slide ${index + 1}`} crossOrigin="anonymous"  />
                 </div>
               ))}
             </Slider>

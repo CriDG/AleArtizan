@@ -44,11 +44,10 @@
 .navbar-button {
   background: none;
   border: none;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 2rem;
   cursor: pointer;
   color: #e6007e;
-  font-family: cursive;
+  font-family: 'Brush Script MT', 'Comic Sans MS', cursive;
   transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), color 0.3s ease;
 }
 
@@ -57,3 +56,4 @@
   transform: scale(1.2) rotate(-2deg);
   text-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
 }
+
