@@ -1,156 +1,55 @@
+/* ================= FOOTER ================= */
 .footer {
-  background-color: white; /* Fuchsia */
-  color:  #fc2cfcdd;
-  /* width: 100%; commentato quando ho aggiunto i pezzi sotto!*/
-  padding: 2rem 0;
-  margin-top: 2rem;
-  /* margin-bottom: 1rem; */
+  background: white;
+  color: #fc2cfcdd;
+  width: 100vw;
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
+  opacity: 0.8;
+  margin-top: auto;
 
-  /* ultimele  */
-  width: 100vw; /* 🔥 Assicura che il footer occupi tutta la larghezza */
-  height: auto; /* 🔥 Adatta l'altezza dinamicamente */
-  opacity: 0.5;
-}
-
-@media screen and (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-  }
 }
 
 .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: flex-start; 
 }
 
 .footer-section {
   flex: 1;
   min-width: 250px;
   text-align: center;
-  padding: 0 1rem;
 }
 
 .footer-section h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   margin-bottom: 1rem;
-  font-size: clamp(1.1rem, 2vw, 1.2rem); /* Responsive font size */
 }
 
 .footer-section p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
   margin: 0.5rem 0;
-  font-size: clamp(0.9rem, 1.5vw, 1rem); /* Responsive font size */
-  line-height: 1.5;
 }
 
 .social-icons {
   display: flex;
-  justify-content: center; /* 🔥 Centra le icone sotto "Follow Us" */
-  gap: 1rem;
-  margin-top: 0.5rem; /* 🔥 Riduce lo spazio tra il titolo e le icone */
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1rem, 2vw, 2rem);
+   margin-top: 0.5rem; 
 }
 
 .social-icons a {
-  color:   #fc2cfcdd;
-  font-size: clamp(1.5rem, 2.5vw, 1.8rem); /* Responsive icon size */
-  transition: opacity 0.2s ease;
-  padding: 8px;
-}
-
-.social-icons a:hover {
-  opacity: 0.5;
+  color: #fc2cfcdd;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 2rem;
-  padding-top: 1rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
-}
-
-.footer-section h3,
-.footer-section p,
-.footer-bottom p {
-  font-weight: bold; /* 🔥 Rende tutte le scritte in grassetto */
-}
-
-/* Tablet styles */
-@media (max-width: 1024px) {
-  .footer-content {
-    gap: 1.5rem;
-  }
-
-  .footer-section {
-    min-width: 200px;
-  }
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .footer {
-    padding: 1.5rem 0; /* Reduced padding on mobile */
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .footer-section {
-    min-width: unset;
-    padding: 0;
-  }
-
-  .social-icons {
-    justify-content: center;
-    gap: 2rem; /* Increased gap for better mobile touch targets */
-  }
-
-  .footer-bottom {
-    margin-top: 1.5rem;
-  }
-
-  /* ultime modifiche */
-  .footer {
-    height: auto; /* 🔥 Permette al footer di adattarsi al contenuto */
-    padding-bottom: 2rem; /* 🔥 Spazio extra per evitare che venga tagliato */
-  }
-}
-
-/* Small mobile styles */
-@media (max-width: 480px) {
-  .footer {
-    margin-top: 2rem; /* Reduced top margin on small devices */
-  }
-
-  .footer-content {
-    padding: 0 1rem;
-  }
-
-  .social-icons {
-    gap: 1.5rem;
-  }
-}
-
-/* ultime modifiche */
-@media screen and (max-width: 1366px) {
-  .footer {
-    min-height: 150px; /* 🔥 Evita il taglio del footer su iPad */
-  }
+  padding-top: 0.1rem; 
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+   padding-bottom: 0.1rem; 
 }

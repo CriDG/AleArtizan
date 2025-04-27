@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import './Navbar.css';
 import {
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
   Drawer,
   List,
   ListItem,
@@ -18,11 +18,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md')); // 🔥 Mobile/Tablet detection
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  // 🔹 Funzione per navigare e scrollare alle sezioni della homepage
   const scrollToSection = (id) => {
-    setMenuOpen(false); // 🔥 Chiude il menu dopo la navigazione
+    setMenuOpen(false);
     if (window.location.pathname !== '/home') {
       navigate('/home');
       setTimeout(() => {
@@ -43,229 +42,99 @@ export default function Navbar() {
     <>
       <AppBar
         position="fixed"
-        sx={{ 
-          
-          background: 'rgba(255, 255, 255, 0.5)', 
-          padding: '5px 10px' }}
+        sx={{ background: 'rgba(255, 255, 255, 0.8)', padding: '0 2rem' }}
       >
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          {/* 🔹 Link a sinistra (Solo su Desktop) */}
+        <Toolbar className="navbar-toolbar">
+
+          {/* 🔹 Logo a sinistra */}
+          <div className="navbar-logo">
+            <Link to="/home">
+              <img
+                src="https://i.postimg.cc/jj14DD07/logo2.png"
+                alt="Logo"
+              />
+            </Link>
+          </div>
+
+          {/* 🔹 Link al centro (Desktop) */}
           {!isMobile && (
-            <div style={{ display: 'flex', gap: '20px' }}>
-              <button
-                onClick={() => scrollToSection('chi-siamo')}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  cursor: 'pointer',
-                  color: '#e6007e',
-                  fontFamily: 'cursive', 
-                }}
-              >
+            <div className="navbar-links left">
+              <button onClick={() => scrollToSection('chi-siamo')} className="navbar-button">
                 Chi siamo
               </button>
-              <button
-                onClick={() => scrollToSection('cosa-facciamo')}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  cursor: 'pointer',
-                  color: '#e6007e',
-                  fontFamily: 'cursive', 
-                }}
-              >
+              <button onClick={() => scrollToSection('cosa-facciamo')} className="navbar-button">
                 Cosa facciamo
               </button>
-
-              <button
-                onClick={() => scrollToSection('contatti')}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  cursor: 'pointer',
-                  color: '#e6007e',
-                  fontFamily: 'cursive', 
-                }}
-              >
+              <button onClick={() => scrollToSection('contatti')} className="navbar-button">
                 Contatti
               </button>
             </div>
           )}
 
-          {/* 🔹 Logo al centro */}
-          <Typography
-            variant="h6"
-            component={Link}
-            to="/home"
-            sx={{          
-              textDecoration: 'none',
-              color: '#e6007e',
-              fontWeight: 'bold',
-            }}
-          >
-            <img
-              src="https://i.postimg.cc/jj14DD07/logo2.png"
-              alt="Logo"
-              style={{ height: '110px' }}
-            />
-          </Typography>
+          {/* 🔹 Burger Menu */}
+          <div className="navbar-links right">
+            <IconButton
+              edge="end"
+              color="inherit"
+              onClick={() => setMenuOpen(true)}
+            >
+              <MenuIcon sx={{ color: '#e6007e', fontSize: 35 }} />
+            </IconButton>
+          </div>
 
-          {/* 🔹 Menu Burger a destra */}
-          <IconButton
-            edge="end"
-            color="inherit"
-            onClick={() => setMenuOpen(true)}
-          >
-            <MenuIcon sx={{ color: '#e6007e', fontSize: 30 }} />
-          </IconButton>
         </Toolbar>
+
       </AppBar>
 
-      {/* 🔹 Menu a tendina (Drawer) */}
+      {/* 🔹 Drawer Menu */}
       <Drawer anchor="right" open={menuOpen} onClose={() => setMenuOpen(false)}>
         <List
           sx={{
             width: 250,
-            background: 'rgba(230, 0, 126, 0.4)',
+            background: 'rgba(245, 13, 140, 0.7)',
             height: '100%',
-        
           }}
         >
-          {/* 🔥 Su mobile, spostiamo "Chi siamo" e "Cosa facciamo" nel menu */}
+          {/* 🔥 Solo su Mobile */}
           {isMobile && (
             <>
               <ListItem button onClick={() => scrollToSection('chi-siamo')}>
-                <ListItemText
-                  primary="Chi siamo"
-                  sx={{
-                    color: 'white',
-                    fontSize: '20px',
-                    transition: 'all 0.3s ease-in-out',
-                    '&:hover': {
-                      background:
-                        'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
-                      transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
-                      borderRadius: '5px' /* 🔥 Angoli arrotondati */,
-                      fontFamily: 'cursive', 
-                    },
-                  }}
-                />
+                <ListItemText primary="Chi siamo" sx={listItemStyle} />
               </ListItem>
 
               <ListItem button onClick={() => scrollToSection('cosa-facciamo')}>
-                <ListItemText
-                  primary="Cosa facciamo"
-                  sx={{
-                    color: 'white',
-                    fontSize: '20px',
-                    transition: 'all 0.3s ease-in-out',
-                    '&:hover': {
-                      background:
-                        'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
-                      transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
-                      borderRadius: '5px' /* 🔥 Angoli arrotondati */,
-                      fontFamily: 'cursive', 
-                    },
-                  }}
-                />
+                <ListItemText primary="Cosa facciamo" sx={listItemStyle} />
               </ListItem>
 
               <ListItem button onClick={() => scrollToSection('contatti')}>
-                <ListItemText
-                  primary="Contatti"
-                  sx={{
-                    color: 'white',
-                    fontSize: '20px',
-                    transition: 'all 0.3s ease-in-out',
-                    '&:hover': {
-                      background:
-                        'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
-                      transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
-                      borderRadius: '5px' /* 🔥 Angoli arrotondati */,
-                      fontFamily: 'cursive', 
-                    },
-                  }}
-                />
+                <ListItemText primary="Contatti" sx={listItemStyle} />
               </ListItem>
-
             </>
           )}
 
-          <ListItem
-            button
-            component={Link}
-            to="/diversi"
-            onClick={() => setMenuOpen(false)}
-          >
-            <ListItemText
-              primary="Mix"
-              sx={{
-                color: 'white',
-                fontSize: '20px',
-                transition: 'all 0.3s ease-in-out',
-                '&:hover': {
-                  background:
-                    'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
-                  transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
-                  borderRadius: '5px' /* 🔥 Angoli arrotondati */,
-                  
-                },
-                
-              }}
-            />
+          <ListItem button component={Link} to="/diversi" onClick={() => setMenuOpen(false)}>
+            <ListItemText primary="Mix" sx={listItemStyle} />
           </ListItem>
-          <ListItem
-            button
-            component={Link}
-            to="/famiglia"
-            onClick={() => setMenuOpen(false)}
-          >
-            <ListItemText
-              primary="Famiglia"
-              sx={{
-                color: 'white',
-                fontSize: '20px',
-                transition: 'all 0.3s ease-in-out',
-                '&:hover': {
-                  background:
-                    'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
-                  transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
-                  borderRadius: '5px' /* 🔥 Angoli arrotondati */,
-                  fontFamily: 'cursive', 
-                },
-              }}
-            />
+          <ListItem button component={Link} to="/famiglia" onClick={() => setMenuOpen(false)}>
+            <ListItemText primary="Famiglia" sx={listItemStyle} />
           </ListItem>
-          <ListItem
-            button
-            component={Link}
-            to="/feste"
-            onClick={() => setMenuOpen(false)}
-          >
-            <ListItemText
-              primary="Feste"
-              sx={{
-                color: 'white',
-                fontSize: '20px',
-                transition: 'all 0.3s ease-in-out',
-                '&:hover': {
-                  background:
-                    'rgba(255, 255, 255, 0.5)' /* 🔥 Sfondo più chiaro */,
-                  transform: 'scale(1.05)' /* 🔥 Leggero ingrandimento */,
-                  borderRadius: '5px' /* 🔥 Angoli arrotondati */,
-                  fontFamily: 'cursive', 
-                },
-              }}
-            />
+          <ListItem button component={Link} to="/feste" onClick={() => setMenuOpen(false)}>
+            <ListItemText primary="Feste" sx={listItemStyle} />
           </ListItem>
         </List>
       </Drawer>
     </>
   );
 }
+
+const listItemStyle = {
+  color: 'white',
+  fontSize: '20px',
+  transition: 'all 0.3s ease-in-out',
+  fontFamily: 'cursive',
+  '&:hover': {
+    background: 'rgba(255, 255, 255, 0.5)',
+    transform: 'scale(1.05)',
+    borderRadius: '5px',
+  },
+};

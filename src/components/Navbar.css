@@ -1,126 +1,59 @@
-📌 Navbar sempre visibile
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+.navbar-toolbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* ✨ Cambiato da space-between a center */
   align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-  z-index: 1000;
-  padding: 1px 5px;
-  height: 80px;
-  font-family: cursive;
+  height: clamp(9rem, 10vw, 12rem);
+  padding: 0 clamp(1rem, 5vw, 3rem);
+  position: relative; /* ✨ Così possiamo gestire il logo a sinistra */
 }
 
-/* 📌 Logo al centro */
 .navbar-logo {
+  position: absolute; /* ✨ Posizioniamo il logo assolutamente */
+  left: clamp(1rem, 5vw, 3rem); /* ✨ Mantiene il logo sempre vicino al bordo */
   display: flex;
-  justify-content: center;
-  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-start; /* ✨ Allineato a sinistra */
 }
 
 .navbar-logo img {
-  height: 80px;
+  height: clamp(6rem, 8vw, 9rem);
   width: auto;
 }
 
-/* 📌 Link sinistra (Chi siamo, Cosa facciamo) */
+/* I link adesso sono centrati */
 .navbar-links.left {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  justify-content: center; /* ✨ Centro i link */
+  gap: clamp(1rem, 5vw, 2rem);
+  flex: 0; /* ✨ NUOVA riga: fa in modo che prenda spazio disponibile */
+  left: 50%; /* 🔥 NUOVA riga: lo posizioniamo al centro orizzontale */
+  transform: translateX(-50%); /* 🔥 NUOVA riga: spostiamo il 50% indietro */
   position: absolute;
-  left: 20px;
 }
 
-.navbar-links.left button {
+/* Se hai ancora la navbar-links.right per il burger, la lasciamo com'è */
+.navbar-links.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+/* Bottoni */
+.navbar-button {
   background: none;
   border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 18px;
   color: #e6007e;
-  font-weight: bold;
-  transition: color 0.3s;
+  font-family: cursive;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), color 0.3s ease;
 }
 
-.navbar-links.left button:hover {
-  color: #cc0070;
-}
-
-/* 📌 Link destra (Menu Categorie) */
-.navbar-links.right {
-  position: absolute;
-  right: 20px;
-  color: #cc0070;
-}
-
-/* 📌 Stile del menu Burger */
-.bm-burger-button {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  width: 36px;
-  height: 30px;
-}
-
-.bm-menu {
-  background: #e6007e;
-  padding: 2em;
-  font-size: 1.5em;
-}
-
-.bm-item {
-  display: block;
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-  font-size: 18px;
-}
-
-.bm-item:hover {
-  color: #ffccff;
-}
-
-/* 📌 Stile personalizzato per il pulsante Burger ☰ */
-.custom-burger-icon {
-  font-size: 30px; /* Grandezza del simbolo ☰ */
-  color: #e6007e; /* 🔥 Ora il menu burger è fuxia */
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* 📌 Forziamo il colore del pulsante */
-.bm-burger-button {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  width: 36px;
-  height: 30px;
-}
-
-.bm-burger-bars {
-  background-color: #e6007e !important; /* 🔥 Ora il bottone burger è fuxia */
-}
-
-/* 📌 Stile del menu burger aperto */
-.bm-menu {
-  background: #e6007e; /* 🔥 Sfondo del menu */
-  padding: 2em;
-  font-size: 1.5em;
-}
-
-/* 📌 Stile dei link nel menu */
-.bm-item {
-  display: block;
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.bm-item:hover {
-  color: #ffccff;
+.navbar-button:hover {
+  color: #ff1493;
+  transform: scale(1.2) rotate(-2deg);
+  text-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
 }

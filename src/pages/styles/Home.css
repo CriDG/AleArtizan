@@ -1,86 +1,77 @@
-/* 📌 Sezione Chi siamo */
+/* ================= ABOUT US ================= */
 .about-us {
-  width: 100%;
-  padding: 50px 5%;
   background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: clamp(2rem, 5vw, 4rem);
+  margin: clamp(3rem, 5vw, 5rem) auto;
+  max-width: 1600px;
+  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease-out, transform 1s ease-out;
-  margin-top: 180px;
-  border-radius: 20px;
-  max-width: 1200px;
-  /* margin: 0 auto; */
 }
 
 .about-us.show {
-  opacity: 1;
+  opacity: 8;
   transform: translateY(0);
 }
 
 .about-container {
   display: flex;
+  flex-direction: row-reverse; /* 🔥 Manteniamo immagine e testo affiancati */
   align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  gap: 40px;
-  flex-direction: row-reverse;
+  justify-content:space-between;
+  gap: clamp(1rem, 5vw, 3rem);
+  width: 100%;
 }
 
 .about-image {
-  width: 45%;
+  flex: 1;
   max-width: 500px;
-  border-radius: 10px;
+  height: auto;
+  border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .about-text {
-  width: 50%;
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
 }
 
 .about-text h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 1rem;
   color: #333;
-  margin-bottom: 15px;
+}
+
+.about-text h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  margin-bottom: 1rem;
+  color: #666;
 }
 
 .about-text p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
   color: #555;
 }
 
-@media screen and (max-width: 768px) {
-  .about-container {
-    flex-direction: column-reverse; /* 🔥 Imposta immagine sopra, testo sotto */
-    text-align: center;
-  }
-
-  .about-image {
-    width: 80%; /* 🔥 Mantiene l'immagine proporzionata su mobile */
-  }
-
-  .about-text {
-    width: 100%;
-    font-size: 1rem; /* 🔥 Rende il testo più leggibile su mobile */
-  }
-}
-
-/* 📌 NUOVA SEZIONE CON LO SLIDER */
+/* ================= COSA FACCIAMO / GALLERY ================= */
 .gallery-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 80px 5%;
   background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: clamp(2rem, 5vw, 4rem);
+  margin: clamp(3rem, 5vw, 5rem) auto;
+  max-width: 1600px;
+  width: 100%;
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease-out, transform 1s ease-out;
-  margin-top: 50px;
-  border-radius: 20px;
 }
 
 .gallery-section.show {
@@ -92,51 +83,53 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
+  justify-content: center;
+  gap: clamp(1rem, 5vw, 3rem);
+  width: 100%;
 }
 
 .gallery-text {
-  margin-bottom: 20px;
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
 }
 
 .gallery-text h2 {
-  font-size: 1.5 rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 1rem;
   color: #333;
-  margin-bottom: 10px;
 }
 
 .gallery-text p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
   color: #555;
-  max-width: 1000px;
-  margin: auto;
+  margin-bottom: 1.5rem;
 }
 
-/* 📌 Slider */
 .gallery-carousel {
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 0 1rem;
-  height: 400px;
+  flex: 1;
+  max-width: 500px;
+  height: 450px; 
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .gallery-slide {
-  height: 600px;
+  height: 450px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
+  align-items: center;
 }
 
 .gallery-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
-/* 📌 Slick Carousel Customization */
+/* Slick Carousel Customization */
 .slick-dots {
   bottom: 10px;
 }
@@ -150,58 +143,48 @@
   color: #ff69b4;
 }
 
-/* 📌 Stile delle frecce */
-.slick-prev,
-.slick-next {
+.slick-prev, .slick-next {
   z-index: 9999 !important;
   position: absolute !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
   width: 35px !important;
   height: 35px !important;
-  border-radius: 50% !important;
+  border-radius: 50%;
   display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+  justify-content: center;
+  align-items: center;
 }
 
-.slick-prev {
-  left: 100px !important;
-}
+.slick-prev { left: 50px !important; }
+.slick-next { right: 50px !important; }
 
-.slick-next {
-  right: 100px !important;
-}
-
-.slick-prev:before,
-.slick-next:before {
+.slick-prev:before, .slick-next:before {
   color: fuchsia !important;
   font-size: 24px;
   opacity: 1 !important;
 }
 
-/* 📌 Responsività */
+/* 📱 Responsive: Mobile e Tablet */
 @media screen and (max-width: 768px) {
-  .gallery-section {
-    padding: 50px 5%;
-  }
-
-  .gallery-carousel {
-    height: 250px;
-    width: 90%; /* 🔥 Evita che lo slider sia troppo largo su mobile */
-    margin: auto;
-  }
-
-  .gallery-slide {
-    height: 250px;
-  }
-
+  .about-container,
   .gallery-container {
-    flex-direction: column-reverse; /* 🔥 Sposta lo slider sotto il testo */
+    flex-direction: column;
     text-align: center;
   }
 
+  .about-text,
   .gallery-text {
-    width: 100%;
+    text-align: center;
+  }
+
+  .about-image,
+  .gallery-carousel {
+    width: 80%;
+    height: auto;
+  }
+
+  .gallery-slide {
+    height: 300px;
   }
 }
