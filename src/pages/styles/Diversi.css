@@ -1,11 +1,21 @@
-/* .products-wrapper {
-    display: flex;
-    overflow-x: auto;  /* Abilita lo scroll orizzontale */
-    /* gap: 15px;   Aumenta la distanza tra le card per un aspetto più leggibile
-    padding: 15; */
+.titolo-diversi {
+  margin-top: 80px;                       /* rimuove i margini di default di h2 */
+  font-size: 65px;
+  color: #ff1493;
+  transform-origin: center center;
+  text-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+  text-align: center;
+  font-family: 'Brush Script MT', cursive;
+}
 
-  
-  /* } */
-
-  
-  */
+.contenitore-diversi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  padding: 40px;
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+}

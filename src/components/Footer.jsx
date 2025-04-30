@@ -19,17 +19,17 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: contact@example.com</p>
-          <p>Phone: (123) 456-7890</p>
-          <p>Address: 123 Main Street, City, Country</p>
+          <h3>Contattaci</h3>
+          <p>Email:contact@aleartizan.ro</p>
+          <p>Phone: 3757074244</p>
+          <p>Address: Via Viu 1b, Torino, Italy</p>
         </div>
 
         <div className="footer-section">
           <h3>Follow Us</h3>
           <div className="social-icons">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/AleArtizanPapusidinMacrame/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -43,7 +43,7 @@ const Footer = () => {
               <FaTwitter />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/aleartizanpapusidinmacrame/#"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -61,8 +61,8 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p>
-          &copy; {new Date().getFullYear()} Your Company Name. All rights
-          reserved.
+          &copy; {new Date().getFullYear()} AleArtizan. All rights
+          reserved. Made with 💖 by CriDG
         </p>
       </div>
     </footer>

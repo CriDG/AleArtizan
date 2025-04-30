@@ -39,7 +39,7 @@
   display: flex;
   justify-content: center;
   gap: clamp(1rem, 2vw, 2rem);
-   margin-top: 0.5rem; 
+  margin-top: 0.5rem; 
 }
 
 .social-icons a {
@@ -51,5 +51,6 @@
   text-align: center;
   padding-top: 0.1rem; 
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-   padding-bottom: 0.1rem; 
+  padding-bottom: 0.1rem; 
 }
+

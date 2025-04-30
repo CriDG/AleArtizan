@@ -31,7 +31,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* 🔽 Sezione Chi Siamo */}
+      {/* Section Chi Siamo */}
       <section id="chi-siamo" className={`about-us ${isVisible ? 'show' : ''}`}>
         <div className="about-container">
           <img
@@ -69,7 +69,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 🔹 SECONDO SLIDER CON LE CREAZIONI */}
+      {/*Section cosa faciamo*/}
       <section
         id="cosa-facciamo"
         className={`gallery-section ${isVisible ? 'show' : ''}`}
@@ -98,7 +98,7 @@ const Home = () => {
             </p>
           </div>
 
-          {/* 🔹 Slider dentro la nuova section */}
+          {/* Slider dentro la nuova section */}
           <div className="gallery-carousel">
             <Slider {...sliderSettings}>
               {carouselImages.map((image, index) => (

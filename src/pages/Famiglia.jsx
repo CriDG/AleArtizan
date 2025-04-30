@@ -1,14 +1,15 @@
 import React from 'react'
-
+import './styles/Famiglia.css';
 export default function Famiglia() {
+  
   return (
-
     <>
-     <div>
-        <h1>Famiglia</h1>
-        <p>Prodotti per famiglie</p>
 
+     <div>
+        <h1 className='titolo-famiglia' 
+        >PAGINA IN SVILUPPO 🏭</h1>
     </div>
+    
     </>
    
   )
