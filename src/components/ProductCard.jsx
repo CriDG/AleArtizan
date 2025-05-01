@@ -12,7 +12,7 @@ export default function ProductCard({ children, id, description, price, name, im
         <div className="product-info">
         {/* Prezzo e bottone per aggiungere ai preferiti */}
         <div className="product-footer">
-          <span className="product-price">{price}</span> {/* Prezzo visibile e più grande */}
+          <span className="product-price">{price}</span> 
           <LikeButton />
           <CartButton />
         </div>

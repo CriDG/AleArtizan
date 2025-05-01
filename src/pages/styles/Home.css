@@ -1,4 +1,4 @@
-/* ================= ABOUT US ================= */
+/* sezione chi siamo  */
 .about-us {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
@@ -21,7 +21,7 @@
 
 .about-container {
   display: flex;
-  flex-direction: row-reverse; /* 🔥 Manteniamo immagine e testo affiancati */
+  flex-direction: row-reverse; 
   align-items: center;
   justify-content:space-between;
   gap: clamp(1rem, 5vw, 3rem);
@@ -45,22 +45,22 @@
 .about-text h2 {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   margin-bottom: 1rem;
-  color: #333;
+  color: black;
 }
 
 .about-text h3 {
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   margin-bottom: 1rem;
-  color: #666;
+  color: black;
 }
 
 .about-text p {
   font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.7;
-  color: #555;
+  color: black;
 }
 
-/* ================= COSA FACCIAMO / GALLERY ================= */
+/* sezione cosa facciamo */
 .gallery-section {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
@@ -97,13 +97,13 @@
 .gallery-text h2 {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   margin-bottom: 1rem;
-  color: #333;
+  color: black;
 }
 
 .gallery-text p {
   font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.7;
-  color: #555;
+  color: black;
   margin-bottom: 1.5rem;
 }
 
@@ -165,7 +165,7 @@
   opacity: 1 !important;
 }
 
-/* 📱 Responsive: Mobile e Tablet */
+/*  Responsive x mobile e tablet */
 @media screen and (max-width: 768px) {
   .about-container,
   .gallery-container {

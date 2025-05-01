@@ -11,7 +11,7 @@ export default function LikeButton() {
     <>
     <AiFillHeart 
     onClick={handleClick}
-    style={{color:liked ? 'red' : 'grey', cursor:'pointer'}}
+    style={{color:liked ? 'red' : 'lightgray', cursor:'pointer'}}
     size={34}
     />
     

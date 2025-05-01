@@ -11,7 +11,7 @@ export default function CartButton() {
     <>
      <FaShoppingCart 
      onClick={handleClick}
-     style={{color:added ? '#32CD32' : 'grey', cursor : 'grab'}}
+     style={{color:added ? '#00FF7F' : 'lightgray', cursor : 'grab'}}
      size={34}
      />
 

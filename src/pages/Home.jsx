@@ -31,6 +31,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      
       {/* Section Chi Siamo */}
       <section id="chi-siamo" className={`about-us ${isVisible ? 'show' : ''}`}>
         <div className="about-container">
@@ -55,8 +56,7 @@ const Home = () => {
               Mărțișor nella nostra città, dove questi ornamenti sono stati
               accolti molto bene. Questo ci ha dato la spinta per andare avanti
               e, da allora, da un anno e mezzo, realizziamo bambole di macramè",
-              ha raccontato Loredana durante la trasmissione ZF Afaceri de la
-              Zero, un progetto sostenuto da Banca Transilvania. Anche se
+              ha raccontato Loredana durante la trasmissione 'ZF-Affari da zero', un progetto sostenuto da Banca Transilvania. Anche se
               realizza le bambole di macramè da sola, le nonne della famiglia la
               aiutano con altre componenti per i quadri, che possono essere
               regalati in qualsiasi occasione. Ad esempio, i quadri creati da

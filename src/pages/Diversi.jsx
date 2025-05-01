@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/Diversi.css';  // Importa il file CSS
+import './styles/Diversi.css';  
 import ProductCard from '../components/ProductCard';
 import diversiProducts from '../data/diversiData';
 

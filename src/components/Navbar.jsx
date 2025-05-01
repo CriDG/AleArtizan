@@ -57,7 +57,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* 🔹 Link al centro (Desktop) */}
+          {/* 🔹 Link al centro,quando sul desktop */}
           {!isMobile && (
             <div className="navbar-links left">
               <button onClick={() => scrollToSection('chi-siamo')} className="navbar-button">
@@ -96,7 +96,7 @@ export default function Navbar() {
             height: '100%',
           }}
         >
-          {/* 🔥 Solo su Mobile */}
+          {/* Solo su mobile/tablet */}
           {isMobile && (
             <>
               <ListItem button onClick={() => scrollToSection('chi-siamo')}>
