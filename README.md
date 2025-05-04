@@ -1,8 +1,33 @@
-# React + Vite
+AleArtizan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AleArtizan è un sito web per la presentazione di prodotti artigianali, sviluppato come progetto personale con React. È attualmente in fase di sviluppo e in futuro verrà esteso per diventare un vero e-commerce.
 
-Currently, two official plugins are available:
+Questo progetto nasce come vetrina per mettere in pratica le competenze base in React che sto acquisendo. Man mano che apprendo nuove tecnologie e funzionalità, le applico direttamente in questo sito per migliorarlo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 Puoi visualizzare l'applicazione al seguente link (deploy Firebase):https://aleartizan.web.app/
+
+✨ Funzionalità attuali
+
+Navigazione multipagina con React Router
+
+Presentazione visiva dei prodotti
+
+Grafica responsive e dinamica
+
+Animazioni e interazioni con gli elementi
+
+Integrazione con Firebase Hosting
+
+(Il sito è in continuo aggiornamento e sviluppo)
+
+🔧 Tecnologie utilizzate
+
+⚛️ React
+
+⚡ Vite
+
+🎨 CSS personalizzato (con qualche effetto animato)
+
+☁️ Firebase (hosting e configurazione base)
+
+🧹 ESLint (analisi statica del codice)
