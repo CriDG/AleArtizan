@@ -21,7 +21,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Contattaci</h3>
           <p>Email:contact@aleartizan.ro</p>
-          <p>Phone: 3757074244</p>
+          <p>Telefono: 3757074244</p>
           <p>Address: Via Viu 1b, Torino, Italy</p>
         </div>
 
@@ -50,7 +50,7 @@ const Footer = () => {
               <FaInstagram />
             </a>
             <a
-              href="https://linkedin.com"
+              href="www.linkedin.com/in/cristian-gavriliu-032b50329"
               target="_blank"
               rel="noopener noreferrer"
             >
