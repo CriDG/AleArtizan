@@ -10,6 +10,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'; // 👤 Icona Accedi/Registrati
 import { Link, useNavigate } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -57,7 +58,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* 🔹 Link al centro,quando sul desktop */}
+          {/* 🔹 Link al centro, quando sul desktop */}
           {!isMobile && (
             <div className="navbar-links left">
               <button onClick={() => scrollToSection('chi-siamo')} className="navbar-button">
@@ -72,8 +73,21 @@ export default function Navbar() {
             </div>
           )}
 
-          {/* 🔹 Burger Menu */}
           <div className="navbar-links right">
+          {/* 🔹 Icona Accedi/Registrati solo su DESKTOP */}
+          {!isMobile && (
+            <IconButton
+              edge="end"
+              color="inherit"
+              onClick={() => navigate('/accedi-registrati')}
+              sx={{ ml: 2 }}
+              aria-label="Accedi/Registrati"
+            >
+              <AccountCircleIcon sx={{ color: '#e6007e', fontSize: 30 }} />
+            </IconButton>
+          )}
+
+            {/* 🔹 Burger Menu visibile sempre */}
             <IconButton
               edge="end"
               color="inherit"
@@ -84,7 +98,6 @@ export default function Navbar() {
           </div>
 
         </Toolbar>
-
       </AppBar>
 
       {/* 🔹 Drawer Menu */}
@@ -96,7 +109,7 @@ export default function Navbar() {
             height: '100%',
           }}
         >
-          {/* Solo su mobile/tablet */}
+          {/* ✅ Solo su mobile/tablet */}
           {isMobile && (
             <>
               <ListItem button onClick={() => scrollToSection('chi-siamo')}>
@@ -110,9 +123,15 @@ export default function Navbar() {
               <ListItem button onClick={() => scrollToSection('contatti')}>
                 <ListItemText primary="Contatti" sx={listItemStyle} />
               </ListItem>
+
+              {/* ✅ "Accedi/Registrati" SOLO su mobile/tablet come voce di menu */}
+              <ListItem button onClick={() => { navigate('/accedi-registrati'); setMenuOpen(false); }}>
+                <ListItemText primary="Accedi/Registrati" sx={listItemStyle} />
+              </ListItem>
             </>
           )}
 
+          {/* ✅ Sempre presenti anche su mobile */}
           <ListItem button component={Link} to="/diversi" onClick={() => setMenuOpen(false)}>
             <ListItemText primary="Mix" sx={listItemStyle} />
           </ListItem>

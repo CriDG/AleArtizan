@@ -6,6 +6,7 @@ import Famiglia from './pages/Famiglia';
 import Feste from './pages/Feste';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import Registrati from './pages/Registrati';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/diversi" element={<Diversi />} />
           <Route path="/famiglia" element={<Famiglia />} />
           <Route path="/feste" element={<Feste />} />
+          <Route path="/accedi-registrati" element={<Registrati/>} />
         </Routes>
       </div>
       <Footer />

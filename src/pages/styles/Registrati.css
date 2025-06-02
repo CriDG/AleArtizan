@@ -1,0 +1,123 @@
+/* Registrati.css */
+
+/* Contenitore del form */
+form {
+  max-width: 600px;
+  margin: clamp(2rem, 5vw, 5rem) auto;
+  padding: clamp(2rem, 4vw, 3rem);
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Titolo del form */
+form h2 {
+  text-align: center;
+  color: #e6007e;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
+}
+
+/* Blocchi dei campi */
+form div {
+  margin-bottom: 1.5rem;
+}
+
+/* Etichette */
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Input */
+form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  transition: border 0.3s;
+}
+
+form input:focus {
+  border-color: #e6007e;
+  outline: none;
+}
+
+/* Messaggi di errore */
+form p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: red;
+}
+
+/* Icona visibilità password */
+.password-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  flex: 1;
+}
+
+.password-wrapper span {
+  margin-left: 0.75rem;
+  color: #555;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.password-wrapper span:hover {
+  transform: scale(1.2);
+  color: #e6007e;
+}
+
+/* Bottone */
+form button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  background-color: #e6007e;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #c4006b;
+}
+
+
+/* ✅ Messaggio di successo */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid #c3e6cb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animazione di comparsa */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
