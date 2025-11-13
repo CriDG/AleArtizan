@@ -7,7 +7,7 @@ export default function Diversi() {
   
   return (
     <div style={{ padding: '2rem' }}>
-      <h2>Prodotti Diversi</h2>
+      <h2 style={{marginTop: '3rem', textAlign: 'center'}}>Prodotti Diversi</h2>
       <div
         style={{
           display: 'grid',
