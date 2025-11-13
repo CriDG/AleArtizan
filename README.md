@@ -1,24 +1,45 @@
-AleArtizan
-
-AleArtizan è un sito web per la presentazione di prodotti artigianali, sviluppato come progetto personale con React. È attualmente in fase di sviluppo e in futuro verrà esteso per diventare un vero e-commerce.
-
-Questo progetto nasce come vetrina per mettere in pratica le competenze base in React che sto acquisendo. Man mano che apprendo nuove tecnologie e funzionalità, le applico direttamente in questo sito per migliorarlo.
-
-👉 Puoi visualizzare l'applicazione al seguente link (deploy Firebase):https://aleartizan.web.app/
-
 ✨ Funzionalità attuali
+🔹 Navigazione
 
-Navigazione multipagina con React Router
+Navigazione multipagina tramite React Router.
 
-Presentazione visiva dei prodotti
+Navbar responsive e ottimizzata per desktop/mobile.
 
-Grafica responsive e dinamica
+🔹 Presentazione Prodotti
 
-Animazioni e interazioni con gli elementi
+Card prodotto con immagini, descrizioni e interazioni base.
 
-Integrazione con Firebase Hosting
+Effetti grafici, animazioni e layout responsive.
 
-(Il sito è in continuo aggiornamento e sviluppo)
+🔹 Autenticazione Utente (in sviluppo ma già funzionale)
+
+Form di Registrazione
+
+Campi: nome, cognome, email, password.
+
+Validazione della password con regole personalizzate.
+
+Messaggi di errore/successo dinamici.
+
+Form di Login
+
+Accesso con email e password.
+
+Messaggi di feedback in caso di credenziali errate.
+
+🔹 Wishlist (Lista dei preferiti)
+
+Aggiunta/rimozione dei prodotti ai preferiti.
+
+Salvataggio persistente tramite localStorage.
+
+Visualizzazione dei prodotti preferiti in una pagina dedicata.
+
+🔹 Hosting e Deploy
+
+Deploy su Firebase Hosting con configurazione ottimizzata per Vite + React.
+
+(Il sito è in costante aggiornamento e verrà ampliato con nuove funzionalità)
 
 🔧 Tecnologie utilizzate
 
@@ -26,8 +47,22 @@ Integrazione con Firebase Hosting
 
 ⚡ Vite
 
-🎨 CSS personalizzato (con qualche effetto animato)
+🎨 CSS personalizzato
 
-☁️ Firebase (hosting e configurazione base)
+🔥 Firebase (Hosting)
 
-🧹 ESLint (analisi statica del codice)
+🔄 React Router
+
+🧹 ESLint
+
+📌 Obiettivi futuri
+
+Implementazione di un vero carrello.
+
+Autenticazione avanzata con Firebase Auth (Google, Facebook, ecc.).
+
+Database remoto con Firestore.
+
+Gestione ordini e pagamenti.
+
+Pagina Admin per gestione dei prodotti.
