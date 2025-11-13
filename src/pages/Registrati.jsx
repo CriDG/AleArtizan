@@ -1,99 +1,150 @@
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import './styles/Registrati.css';
+import React from 'react'
+import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import './styles/Registrati.css' 
 
 export default function Registrati() {
   const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset
-  } = useForm();
+    register: registerReg,
+    handleSubmit: handleSubmitReg,
+    reset: resetReg,
+    formState: { errors: errorsReg },
+  } = useForm()
+  const {
+    register: registerLog,
+    handleSubmit: handleSubmitLog,
+    formState: { errors: errorsLog },
+  } = useForm()
+  const navigate = useNavigate()
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [successMessage, setSuccessMessage] = useState('');
+  // Handler per la parte di REGISTRAZIONE
+  const onSubmitRegister = (data) => {
+    const stored = localStorage.getItem('users')
+    const users = stored ? JSON.parse(stored) : []
 
-  const onSubmit = (data) => {
-    const password = data.password;
-
-    // Validazione password personalizzata
-    const passwordValida =
-      /^[A-Z]/.test(password) &&
-      password.length >= 6 &&
-      (password.match(/\d/g) || []).length >= 2 &&
-      /[.,\-]/.test(password);
-
-    if (!passwordValida) {
-      alert("La password deve:\n- Iniziare con una lettera maiuscola\n- Avere almeno 6 caratteri\n- Contenere almeno 2 numeri\n- Includere almeno un simbolo tra . , -");
-      return;
+    if (users.find((u) => u.email === data.email)) {
+      alert('❌ Email già registrata.')
+      return
     }
 
-    console.log("Dati inviati:", data);
-    setSuccessMessage("Registrazione completata con successo!");
-    reset();
+    const newUser = {
+      id: Date.now().toString(),
+      email: data.email,
+      password: data.password,
+      wishlist: [],
+    }
+    users.push(newUser)
+    localStorage.setItem('users', JSON.stringify(users))
 
-    // Nasconde il messaggio dopo 5 secondi
-    setTimeout(() => {
-      setSuccessMessage('');
-    }, 5000);
-  };
+    localStorage.setItem('currentUser', JSON.stringify(newUser))
+    alert('✅ Registrazione avvenuta con successo!')
+    resetReg()
+    navigate('/home')
+  }
+
+  // Handler per la parte di LOGIN
+  const onSubmitLogin = (data) => {
+    const stored = localStorage.getItem('users')
+    const users = stored ? JSON.parse(stored) : []
+
+    const found = users.find(
+      (u) => u.email === data.email && u.password === data.password
+    )
+    if (!found) {
+      alert('❌ Credenziali errate.')
+      return
+    }
+
+    localStorage.setItem('currentUser', JSON.stringify(found))
+    alert('✅ Login avvenuto con successo!')
+    navigate('/home')
+  }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      <h2>Registrazione utente</h2>
+    <div className="registrati-container">
+      <h2 className='page-title'>Accedi o Registrati</h2>
+      <div className="forms-wrapper">
 
-      {/* ✅ Messaggio di successo */}
-      {successMessage && <div className="success-message">{successMessage}</div>}
+        {/* FORM REGISTRAZIONE */}
+        <div className="form-box">
+          <h3 className="form-title">Registrati</h3>
 
-      {/* Nome */}
-      <div>
-        <label>Nome:</label>
-        <input
-          {...register('nome', { required: 'Il nome è obbligatorio' })}
-        />
-        {errors.nome && <p>{errors.nome.message}</p>}
-      </div>
+          <form onSubmit={handleSubmitReg(onSubmitRegister)}>
+            <div className="form-group">
+              <label>Email:</label>
+              <input
+                type="email"
+                {...registerReg('email', {
+                  required: 'L’email è obbligatoria',
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: 'Formato email non valido',
+                  },
+                })}
+              />
+              {errorsReg.email && (
+                <span className="error-message">{errorsReg.email.message}</span>
+              )}
+            </div>
 
-      {/* Email */}
-      <div>
-        <label>Email:</label>
-        <input
-          type="text"
-          onInvalid={(e) => e.preventDefault()}
-          {...register('email', {
-            required: "L'email è obbligatoria",
-            pattern: {
-              value: /^\S+@\S+\.\S+$/,
-              message: 'Formato email non valido'
-            }
-          })}
-        />
-        {errors.email && <p>{errors.email.message}</p>}
-      </div>
-
-      {/* Password */}
-      <div>
-        <label>Password:</label>
-        <div className="password-wrapper">
-          <input
-            type={showPassword ? 'text' : 'password'}
-            {...register('password', {
-              required: 'La password è obbligatoria',
-              minLength: {
-                value: 6,
-                message: 'Minimo 6 caratteri'
-              }
-            })}
-          />
-          <span onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
-          </span>
+            <div className="form-group">
+              <label>Password:</label>
+              <input
+                type="password"
+                {...registerReg('password', {
+                  required: 'La password è obbligatoria',
+                  minLength: {
+                    value: 6,
+                    message: 'Minimo 6 caratteri',
+                  },
+                })}
+              />
+              {errorsReg.password && (
+                <span className="error-message">{errorsReg.password.message}</span>
+              )}
+            </div>
+            <button type="submit" className="btn-primary">
+              Registrati
+            </button>
+          </form>
         </div>
-        {errors.password && <p>{errors.password.message}</p>}
-      </div>
 
-      <button type="submit">Registrati!</button>
-    </form>
-  );
+        {/* FORM LOGIN */}
+        <div className="form-box">
+          <h3 className="form-title">Accedi</h3>
+          <form onSubmit={handleSubmitLog(onSubmitLogin)}>
+            <div className="form-group">
+              <label>Email:</label>
+              <input
+                type="email"
+                {...registerLog('email', {
+                  required: 'L’email è obbligatoria',
+                })}
+              />
+              {errorsLog.email && (
+                <span className="error-message">{errorsLog.email.message}</span>
+              )}
+            </div>
+
+            <div className="form-group">
+              <label>Password:</label>
+              <input
+                type="password"
+                {...registerLog('password', {
+                  required: 'La password è obbligatoria',
+                })}
+              />
+              {errorsLog.password && (
+                <span className="error-message">{errorsLog.password.message}</span>
+              )}
+            </div>
+
+            <button type="submit" className="btn-primary">
+              Accedi
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  )
 }

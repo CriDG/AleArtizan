@@ -2,8 +2,6 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import React, { useEffect, useState } from 'react';
 import './Footer.css';
 
-
-
 const Footer = () => {
  const [isVisible, setIsVisible] = useState(false);
 

@@ -1,31 +1,31 @@
-/* Registrati.css */
+
 
 /* Contenitore del form */
-form {
+.registrati-container form {
   max-width: 600px;
-  margin: clamp(2rem, 5vw, 5rem) auto;
-  padding: clamp(2rem, 4vw, 3rem);
+  margin: clamp(0.6rem, 2.5vw, 1.2rem) auto;
+  padding: clamp(1rem, 3vw, 1.5rem);
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   border-radius: 1rem;
   font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
 }
 
 /* Titolo del form */
-form h2 {
+.registrati-container form h2 {
   text-align: center;
   color: #e6007e;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   margin-bottom: 2rem;
 }
 
-/* Blocchi dei campi */
-form div {
+
+.registrati-container .form-group {
   margin-bottom: 1.5rem;
 }
 
-/* Etichette */
-form label {
+.registrati-container form label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -33,52 +33,52 @@ form label {
   color: #333;
 }
 
-/* Input */
-form input {
+.registrati-container form input {
   width: 100%;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   transition: border 0.3s;
+  box-sizing: border-box;
 }
 
-form input:focus {
+.registrati-container form input:focus {
   border-color: #e6007e;
   outline: none;
 }
 
 /* Messaggi di errore */
-form p {
+.registrati-container form p {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: red;
 }
 
-/* Icona visibilità password */
-.password-wrapper {
+/* Icona visibilità password*/
+.registrati-container .password-wrapper {
   display: flex;
   align-items: center;
 }
 
-.password-wrapper input {
+.registrati-container .password-wrapper input {
   flex: 1;
 }
 
-.password-wrapper span {
+.registrati-container .password-wrapper span {
   margin-left: 0.75rem;
   color: #555;
   cursor: pointer;
   transition: transform 0.2s, color 0.2s;
 }
 
-.password-wrapper span:hover {
+.registrati-container .password-wrapper span:hover {
   transform: scale(1.2);
   color: #e6007e;
 }
 
-/* Bottone */
-form button[type="submit"] {
+/* Bottone submit */
+.registrati-container form button[type="submit"] {
   width: 100%;
   padding: 1rem;
   background-color: #e6007e;
@@ -91,12 +91,11 @@ form button[type="submit"] {
   transition: background-color 0.3s;
 }
 
-form button[type="submit"]:hover {
+.registrati-container form button[type="submit"]:hover {
   background-color: #c4006b;
 }
 
-
-/* ✅ Messaggio di successo */
+/* Messaggio di successo */
 .success-message {
   background-color: #d4edda;
   color: #155724;
@@ -115,9 +114,87 @@ form button[type="submit"]:hover {
     opacity: 0;
     transform: translateY(-10px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.registrati-container {
+  padding-top: 64px; 
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+.page-title {
+  text-align: center;
+  margin: 0.4rem 0 0.9rem;
+  font-size: 1.15rem;
+  color: #e6007e;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.registrati-container .forms-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem; 
+}
+
+.registrati-container .form-box {
+  margin-bottom: 0.5rem;
+}
+
+.registrati-container .form-title {
+  margin: 0 0 0.18rem; 
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.registrati-container .form-group {
+  margin-bottom: 0.6rem;
+}
+
+.error-message {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #d32f2f;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 1rem;
+  background-color: #e6007e;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn-primary:hover {
+  background-color: #c4006b;
+}
+
+
+@media (min-width: 768px) {
+  .registrati-container { padding-top: 84px; }
+  .page-title { font-size: 1.45rem; margin-bottom: 1rem; }
+  .registrati-container .forms-wrapper { gap: 1.5rem; }
+}
+
+
+.registrati-container .form-box .form-title {
+  text-align: center;
+  margin: 0 auto 0.2rem; 
+  display: block;
+}
+.registrati-container .form-box h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }

@@ -1,18 +1,17 @@
 .navbar-toolbar {
   display: flex;
-  justify-content: center; /* ✨ Cambiato da space-between a center */
-  align-items: center;
+  justify-content: center; 
   height: clamp(9rem, 10vw, 12rem);
   padding: 0 clamp(1rem, 5vw, 3rem);
-  position: relative; /* ✨ Così possiamo gestire il logo a sinistra */
+  position: relative; 
 }
 
 .navbar-logo {
-  position: absolute; /* ✨ Posizioniamo il logo assolutamente */
-  left: clamp(1rem, 5vw, 3rem); /* ✨ Mantiene il logo sempre vicino al bordo */
+  position: absolute; 
+  left: clamp(1rem, 5vw, 3rem); 
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* ✨ Allineato a sinistra */
+  justify-content: flex-start; 
 }
 
 .navbar-logo img {
@@ -20,19 +19,19 @@
   width: auto;
 }
 
-/* I link adesso sono centrati */
+
 .navbar-links.left {
   display: flex;
   align-items: center;
-  justify-content: center; /* ✨ Centro i link */
+  justify-content: center; 
   gap: clamp(1rem, 5vw, 2rem);
-  flex: 0; /* ✨ NUOVA riga: fa in modo che prenda spazio disponibile */
-  left: 50%; /* 🔥 NUOVA riga: lo posizioniamo al centro orizzontale */
-  transform: translateX(-50%); /* 🔥 NUOVA riga: spostiamo il 50% indietro */
+  flex: 0; 
+  left: 50%; 
+  transform: translateX(-50%); 
   position: absolute;
 }
 
-/* Se hai ancora la navbar-links.right per il burger, la lasciamo com'è */
+
 .navbar-links.right {
   display: flex;
   align-items: center;
@@ -40,7 +39,7 @@
   flex: 1;
 }
 
-/* Bottoni */
+
 .navbar-button {
   background: none;
   border: none;

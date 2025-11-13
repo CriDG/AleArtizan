@@ -1,4 +1,4 @@
-/* 📌 Reset globale */
+/* Reset globale */
 * {
   margin: 0;
   padding: 0;
@@ -16,10 +16,9 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
-  height: 100%; /* 🔥 AGGIUNGI questa riga */
-  display: flex; /* 🔥 AGGIUNGI questa riga */
-  flex-direction: column; /* 🔥 AGGIUNGI questa riga */
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
 }
 
 img {
