@@ -1,7 +1,7 @@
 AleArtizan
 
 AleArtizan è un sito web per la presentazione di prodotti artigianali, sviluppato come progetto personale con React.
-Il progetto è in fase di sviluppo continuo e in futuro verrà esteso per diventare un vero e proprio e-commerce completo.
+Il progetto è in fase di sviluppo continuo e in futuro verrà esteso per diventare un e-commerce completo.
 
 Nasce come applicazione vetrina per mettere in pratica le competenze che sto acquisendo nello sviluppo front-end. Ogni nuova tecnologia o concetto imparato viene integrato direttamente nel progetto, così da migliorarlo passo dopo passo.
 
